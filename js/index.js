@@ -124,11 +124,11 @@ function drawRoute() {
               'type': 'Feature',
               'geometry': {
                 'type': 'Point',
-                'coordinates': [384743.629,
-                        6681677.290]
+                'coordinates': [384683.000,
+                        6681698.000]
               },
               'properties': {
-                'test_property': 'Start / Finish'
+                'test_property': 'START'
               }
 
             }
@@ -141,8 +141,134 @@ function drawRoute() {
         'maxResolution': 1000
     };
     var params = [geojsonObject, {
-            clearPrevious: true,
+            clearPrevious: false,
             layerOptions: testOptions,
+            centerTo: true,
+            featureStyle: {
+                fill: {
+                    color: '#ff0000'
+                },
+                stroke : {
+                    color: '#ff0000',
+                    width: 1
+                },
+                text : {
+                    scale : 3,
+                    fill : {
+                        color : '#ffffff'
+                    },
+                    stroke : {
+                        color : '#000000',
+                        width : 2
+                    },
+                    labelProperty: 'test_property'
+                },
+            prio: 1,
+            minScale: 1451336
+        }}];
+
+    channel.postRequest(
+        'MapModulePlugin.AddFeaturesToMapRequest',
+        params
+    );
+    channel.log('MapModulePlugin.AddFeaturesToMapRequest posted with data', params);
+
+
+    var geojsonObject4 = {
+      'type': 'FeatureCollection',
+      'crs': {
+        'type': 'name',
+        'properties': {
+          'name': 'EPSG:3067'
+        }
+      },
+      'features': [
+        {
+          'type': 'Feature',
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [384775.000,
+                    6674115.000]
+          },
+          'properties': {
+            'test_property': 'FINISH'
+          }
+
+        }
+
+      ]
+    };
+
+    var testOptions4 = {
+        'minResolution': 0,
+        'maxResolution': 1000
+    };
+    var params4 = [geojsonObject4, {
+            clearPrevious: false,
+            layerOptions: testOptions4,
+            centerTo: true,
+            featureStyle: {
+                fill: {
+                    color: '#ff0000'
+                },
+                stroke : {
+                    color: '#ff0000',
+                    width: 1
+                },
+                text : {
+                    scale : 3,
+                    fill : {
+                        color : '#ffffff'
+                    },
+                    stroke : {
+                        color : '#000000',
+                        width : 2
+                    },
+                    labelProperty: 'test_property'
+                },
+            prio: 1,
+            minScale: 1451336
+        }}];
+
+    channel.postRequest(
+        'MapModulePlugin.AddFeaturesToMapRequest',
+        params4
+    );
+    channel.log('MapModulePlugin.AddFeaturesToMapRequest posted with data', params4);
+
+
+    var geojsonObject5 = {
+      'type': 'FeatureCollection',
+      'crs': {
+        'type': 'name',
+        'properties': {
+          'name': 'EPSG:3067'
+        }
+      },
+      'features': [
+        {
+          'type': 'Feature',
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [384393.000,
+                    6681009.000]
+          },
+          'properties': {
+            'test_property': '10km'
+          }
+
+        }
+
+      ]
+    };
+
+    var testOptions5= {
+        'minResolution': 0,
+        'maxResolution': 1000
+    };
+    var params5 = [geojsonObject5, {
+            clearPrevious: false,
+            layerOptions: testOptions5,
             centerTo: true,
             featureStyle: {
                 fill: {
@@ -158,7 +284,7 @@ function drawRoute() {
                         color : 'rgba(142,196,73,1)'
                     },
                     stroke : {
-                        color : 'rgba(14,104,59,1)',
+                        color : '#000000',
                         width : 2
                     },
                     labelProperty: 'test_property'
@@ -169,9 +295,73 @@ function drawRoute() {
 
     channel.postRequest(
         'MapModulePlugin.AddFeaturesToMapRequest',
-        params
+        params5
     );
-    channel.log('MapModulePlugin.AddFeaturesToMapRequest posted with data', params);
+    channel.log('MapModulePlugin.AddFeaturesToMapRequest posted with data', params5);
+
+
+    var geojsonObject6 = {
+      'type': 'FeatureCollection',
+      'crs': {
+        'type': 'name',
+        'properties': {
+          'name': 'EPSG:3067'
+        }
+      },
+      'features': [
+        {
+          'type': 'Feature',
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [384183.000,
+                    6682759.000]
+          },
+          'properties': {
+            'test_property': '21km'
+          }
+
+        }
+
+      ]
+    };
+
+    var testOptions6= {
+        'minResolution': 0,
+        'maxResolution': 1000
+    };
+    var params6 = [geojsonObject6, {
+            clearPrevious: false,
+            layerOptions: testOptions6,
+            centerTo: true,
+            featureStyle: {
+                fill: {
+                    color: '#ff0000'
+                },
+                stroke : {
+                    color: '#ff0000',
+                    width: 1
+                },
+                text : {
+                    scale : 3,
+                    fill : {
+                        color : 'rgba(14,104,59,1)'
+                    },
+                    stroke : {
+                        color : '#000000',
+                        width : 2
+                    },
+                    labelProperty: 'test_property'
+                },
+            prio: 1,
+            minScale: 1451336
+        }}];
+
+    channel.postRequest(
+        'MapModulePlugin.AddFeaturesToMapRequest',
+        params6
+    );
+    channel.log('MapModulePlugin.AddFeaturesToMapRequest posted with data', params6);
+
 
     var route10 = resolveRoute10();
 
