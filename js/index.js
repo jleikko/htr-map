@@ -145,6 +145,12 @@ function drawRoute() {
             layerOptions: testOptions,
             centerTo: true,
             featureStyle: {
+                image : {
+                    shape: 4,
+                    size: 8,
+                    color: '#333333',
+                    stroke: '#333333'
+                },
                 fill: {
                     color: '#ff0000'
                 },
@@ -153,15 +159,17 @@ function drawRoute() {
                     width: 1
                 },
                 text : {
-                    scale : 3,
+                    scale : 4,
                     fill : {
-                        color : '#ffffff'
+                        color : '#eeeeee'
                     },
                     stroke : {
-                        color : '#000000',
-                        width : 2
+                        color : '#333333',
+                        width : 3
                     },
-                    labelProperty: 'test_property'
+                    labelProperty: 'test_property',
+                    offsetX: 80,
+                    offsetY: -20
                 },
             prio: 1,
             minScale: 1451336
@@ -208,23 +216,31 @@ function drawRoute() {
             layerOptions: testOptions4,
             centerTo: true,
             featureStyle: {
+                image : {
+                    shape: 4,
+                    size: 8,
+                    color: '#333333',
+                    stroke: '#333333'
+                },
                 fill: {
                     color: '#ff0000'
                 },
                 stroke : {
                     color: '#ff0000',
-                    width: 1
+                    width: 2
                 },
                 text : {
-                    scale : 3,
+                    scale : 4,
                     fill : {
-                        color : '#ffffff'
+                        color : '#eeeeee'
                     },
                     stroke : {
-                        color : '#000000',
-                        width : 2
+                        color : '#333333',
+                        width : 3
                     },
-                    labelProperty: 'test_property'
+                    labelProperty: 'test_property',
+                    offsetX: 80,
+                    offsetY: -20
                 },
             prio: 1,
             minScale: 1451336
@@ -250,8 +266,8 @@ function drawRoute() {
           'type': 'Feature',
           'geometry': {
             'type': 'Point',
-            'coordinates': [384393.000,
-                    6681009.000]
+            'coordinates': [384156.000,
+                    6680605.000]
           },
           'properties': {
             'test_property': '10km'
@@ -284,12 +300,12 @@ function drawRoute() {
                         color : 'rgba(142,196,73,1)'
                     },
                     stroke : {
-                        color : '#000000',
+                        color : '#333333',
                         width : 2
                     },
                     labelProperty: 'test_property'
                 },
-            prio: 1,
+            prio: 2,
             minScale: 1451336
         }}];
 
@@ -313,8 +329,8 @@ function drawRoute() {
           'type': 'Feature',
           'geometry': {
             'type': 'Point',
-            'coordinates': [384183.000,
-                    6682759.000]
+            'coordinates': [384176.000,
+                    6682725.000]
           },
           'properties': {
             'test_property': '21km'
@@ -347,12 +363,12 @@ function drawRoute() {
                         color : 'rgba(14,104,59,1)'
                     },
                     stroke : {
-                        color : '#000000',
+                        color : '#333333',
                         width : 2
                     },
                     labelProperty: 'test_property'
                 },
-            prio: 1,
+            prio: 2,
             minScale: 1451336
         }}];
 
@@ -361,6 +377,149 @@ function drawRoute() {
         params6
     );
     channel.log('MapModulePlugin.AddFeaturesToMapRequest posted with data', params6);
+
+
+    var geojsonObject7 = {
+      'type': 'FeatureCollection',
+      'crs': {
+        'type': 'name',
+        'properties': {
+          'name': 'EPSG:3067'
+        }
+      },
+      'features': [
+        {
+          'type': 'Feature',
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [384020.000,
+                    6683247.000]
+          },
+          'properties': {
+            'test_property': 'DRINK'
+          }
+
+        }
+
+      ]
+    };
+
+    var testOptions7= {
+        'minResolution': 0,
+        'maxResolution': 1000
+    };
+    var params7 = [geojsonObject7, {
+            clearPrevious: false,
+            layerOptions: testOptions7,
+            centerTo: true,
+            featureStyle: {
+                image: {
+                    shape: 5,
+                    size: 5,
+                    color: '#333333',
+                    stroke: '#333333'
+                },
+                fill: {
+                    color: '#ff0000'
+                },
+                stroke : {
+                    color: '#ff0000',
+                    width: 1
+                },
+                text : {
+                    scale : 3,
+                    fill : {
+                        color : '#eeeeee'
+                    },
+                    stroke : {
+                        color : '#333333',
+                        width : 2
+                    },
+                    labelProperty: 'test_property',
+                    offsetX: 65,
+                    offsetY: 0
+                },
+            prio: 3,
+            minScale: 1451336
+        }}];
+
+    channel.postRequest(
+        'MapModulePlugin.AddFeaturesToMapRequest',
+        params7
+    );
+    channel.log('MapModulePlugin.AddFeaturesToMapRequest posted with data', params7);
+
+
+
+    var geojsonObject8 = {
+      'type': 'FeatureCollection',
+      'crs': {
+        'type': 'name',
+        'properties': {
+          'name': 'EPSG:3067'
+        }
+      },
+      'features': [
+        {
+          'type': 'Feature',
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [384287.000,
+                    6681437.000]
+          },
+          'properties': {
+            'test_property': 'DRINK'
+          }
+
+        }
+
+      ]
+    };
+
+    var testOptions8= {
+        'minResolution': 0,
+        'maxResolution': 1000
+    };
+    var params8 = [geojsonObject8, {
+            clearPrevious: false,
+            layerOptions: testOptions8,
+            centerTo: true,
+            featureStyle: {
+                image: {
+                    shape: 5,
+                    size: 5,
+                    color: '#333333',
+                    stroke: '#333333'
+                },
+                fill: {
+                    color: '#ff0000'
+                },
+                stroke : {
+                    color: '#ff0000',
+                    width: 1
+                },
+                text : {
+                    scale : 3,
+                    fill : {
+                        color : '#eeeeee'
+                    },
+                    stroke : {
+                        color : '#333333',
+                        width : 2
+                    },
+                    labelProperty: 'test_property',
+                    offsetX: 65,
+                    offsetY: 0
+                },
+            prio: 3,
+            minScale: 1451336
+        }}];
+
+    channel.postRequest(
+        'MapModulePlugin.AddFeaturesToMapRequest',
+        params8
+    );
+    channel.log('MapModulePlugin.AddFeaturesToMapRequest posted with data', params8);
 
 
     var route10 = resolveRoute10();
@@ -379,7 +538,7 @@ function drawRoute() {
                     width: 15
                 }
             },
-            prio: 3
+            prio: 5
         }];
 
 
@@ -405,7 +564,7 @@ function drawRoute() {
                     width: 7
                 }
             },
-            prio: 2
+            prio: 4
         }];
 
 
