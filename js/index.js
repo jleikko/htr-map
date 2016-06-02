@@ -4,7 +4,7 @@ var channel;
 $(document).ready(function(){
 
 	// init connection
-	var IFRAME_DOMAIN = "http://jleikko.github.io";
+	var IFRAME_DOMAIN = "http://www.paikkatietoikkuna.fi";
 	var iFrame = document.getElementById('oskari');
 	channel = OskariRPC.connect(
 	    iFrame,
