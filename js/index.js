@@ -13,7 +13,7 @@ $(document).ready(function(){
 	channel.onReady(function() {
 	    //channel is now ready and listening.
 	    channel.log('Map is now listening');
-	    var expectedOskariVersion = '1.35.0';
+	    var expectedOskariVersion = '1.36.3';
 	    channel.isSupported(expectedOskariVersion, function(blnSupported) {
 	        if(blnSupported) {
 	            channel.log('Client is supported and Oskari version is ' + expectedOskariVersion);
