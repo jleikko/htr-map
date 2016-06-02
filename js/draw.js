@@ -108,7 +108,7 @@ function drawRoute(channel, route, color, stroke, prio) {
     		layerId: 'routes',
             clearPrevious: false,
             layerOptions: options,
-            centerTo: false,
+            centerTo: true,
             featureStyle: {
                 stroke : {
                     color: color,
@@ -193,6 +193,6 @@ function drawGeoJSON(channel) {
 		0, 2000, 3, 7,
 		imgStart);
 
-	channel.postRequest('MapModulePlugin.ZoomToFeaturesRequest',[])
+	//channel.postRequest('MapModulePlugin.ZoomToFeaturesRequest',[])
 
 }
