@@ -31,7 +31,6 @@ function resolveRoute(fileUrl) {
                 }
             }]
         };
-    console.log(converted);
 	return converted;
 }
 
@@ -95,7 +94,6 @@ function drawMarker(channel, layerId, n, e, minReso, maxReso, prio, size, svg) {
         'MapModulePlugin.AddFeaturesToMapRequest',
         params
     );
-    channel.log('MapModulePlugin.AddFeaturesToMapRequest posted with data', params);
 
 }
 
@@ -122,7 +120,6 @@ function drawRoute(channel, route, color, stroke, prio) {
         'MapModulePlugin.AddFeaturesToMapRequest',
         params
     );
-    channel.log('MapModulePlugin.AddFeaturesToMapRequest posted with data', params);
 
 }
 
@@ -192,7 +189,5 @@ function drawGeoJSON(channel) {
 		6681698.000, 384683.000, 
 		0, 2000, 3, 7,
 		imgStart);
-
-	//channel.postRequest('MapModulePlugin.ZoomToFeaturesRequest',[])
 
 }
