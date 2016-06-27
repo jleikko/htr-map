@@ -148,16 +148,23 @@ function drawGeoJSON(channel) {
 	//DRINK
 	drawMarker(
 		channel, 'drink_layer',
-		6683247.000, 384020.000,
+    eka juomapiste:
+    6683818, 385741,
 		0, 20, 6, 3,
 		imgDrink
 		);
 	drawMarker(
 		channel, 'drink_layer',
-		6681437.000, 384287.000,
+    6681703,384450,
 		0, 20, 6, 3,
 		imgDrink
 		);
+  drawMarker(
+    channel, 'drink_layer',
+    6676475, 384194,
+    0, 20, 6, 3,
+    imgDrink
+    );
 
 	//21km
 	drawMarker(
