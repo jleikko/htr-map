@@ -34,12 +34,12 @@ function resolveRoute(fileUrl) {
 	return converted;
 }
 
-function resolveRoute10() {
-	return resolveRoute('geojson_wgs84/route10.json');
+function resolveRouteA() {
+	return resolveRoute('geojson_wgs84/routeA.json');
 }
 
-function resolveRoute21() {
-	return resolveRoute('geojson_wgs84/route21.json');
+function resolveRouteB() {
+	return resolveRoute('geojson_wgs84/routeB.json');
 }
 
 function drawMarker(channel, layerId, n, e, minReso, maxReso, prio, size, svg) {
@@ -126,9 +126,9 @@ function drawRoute(channel, route, color, stroke, prio) {
 
 function drawGeoJSON(channel) {
 
-	drawRoute(channel, resolveRoute10(), 'rgba(142,196,73,1)', 12, 2);
-	drawRoute(channel, resolveRoute21(), '#0E683B', 5, 1);
-
+	drawRoute(channel, resolveRouteA(), 'rgba(142,196,73,1)', 12, 2);
+	drawRoute(channel, resolveRouteB(), '#0E683B', 5, 1);
+/*
 	//ARROW 1
 		drawMarker(
 		channel, 'drink_layer',
@@ -144,47 +144,41 @@ function drawGeoJSON(channel) {
 		0, 20, 7, 10,
 		imgArr2
 		);
-
+*/
 	//DRINK
 	drawMarker(
 		channel, 'drink_layer',
-    6683818, 385741,
+    6684028.595, 383911.772,
 		0, 20, 6, 3,
 		imgDrink
 		);
 	drawMarker(
 		channel, 'drink_layer',
-    6681703,384450,
+    6683384.953, 385233.720,
 		0, 20, 6, 3,
 		imgDrink
 		);
-  drawMarker(
-    channel, 'drink_layer',
-    6676475, 384194,
-    0, 20, 6, 3,
-    imgDrink
-    );
 
-	//21km
+	//16km
 	drawMarker(
 		channel, 'route_layer',
-		6682725.000, 384176.000,
+		6682943.473, 384601.671,
 		0, 50, 5, 4,
-		img21
+		imgRouteB
 		);
 
-	//10km
+	//8km
 	drawMarker(
 		channel, 'route_layer',
-		6680605.000, 384156.000,
+		6682587.473, 384601.671,
 		0, 50, 5, 4,
-		img10
+		imgRouteA
 		);
 
 	//FINISH
 	drawMarker(
 		channel, 'startfinish_layer',
-		6674115.000, 384775.000,
+		6681671.579, 384735.477, 
 		0, 2000, 4, 7,
 		imgFinish
 		);
@@ -192,7 +186,7 @@ function drawGeoJSON(channel) {
 	//START
 	drawMarker(
 		channel, 'startfinish_layer',
-		6681698.000, 384683.000, 
+		6681681.946, 384813.064, 
 		0, 2000, 3, 7,
 		imgStart);
 
