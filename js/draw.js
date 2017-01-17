@@ -126,15 +126,17 @@ function drawRoute(channel, route, color, stroke, prio) {
 
 function drawGeoJSON(channel) {
 
-if (isRouteWanted(8))
-	drawRoute(channel, resolveRouteA(), 'rgba(142,196,73,1)', 12, 2);
-if (isRouteWanted(16))
-	drawRoute(channel, resolveRouteB(), '#0E683B', 5, 1);
-/*
+if (isRouteWanted(8)) {
+	drawRoute(channel, resolveRouteA(), 'rgba(142,196,73,1)', isRouteSelected(8) ? 12 : 14, 2);
+}
+if (isRouteWanted(16)) {
+  drawRoute(channel, resolveRouteB(), '#0E683B', isRouteSelected(16) ? 9 : 6, 1);
+}
+
 	//ARROW 1
 		drawMarker(
 		channel, 'drink_layer',
-		6682033, 384105,
+		6682590, 384165,
 		0, 20, 7, 10,
 		imgArr1
 		);
@@ -142,11 +144,21 @@ if (isRouteWanted(16))
 	//ARROW 2
 		drawMarker(
 		channel, 'drink_layer',
-		6680800, 384338,
+		6682380, 385000,
 		0, 20, 7, 10,
 		imgArr2
 		);
-*/
+
+    if (isRouteWanted(16)) {
+      //ARROW 3
+      drawMarker(
+      channel, 'drink_layer',
+      6684775, 383562,
+      0, 20, 7, 10,
+      imgArr3
+      );
+    }
+
 	//DRINK
 if (isRouteWanted(16)) {
 	drawMarker(
@@ -203,7 +215,11 @@ if (isRouteWanted(16)) {
 function isRouteWanted(routeName) {
   var routeParam = getUrlParameter('route');
   return !routeParam || routeParam == routeName;
+}
 
+function isRouteSelected(routeName) {
+  var routeParam = getUrlParameter('route');
+  return routeParam == routeName;
 }
 
 function getUrlParameter(name) {
